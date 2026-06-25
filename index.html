@@ -3,428 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Level Biology: GLP-1 Agonists & Body Composition</title>
+    <title>Visual Explanation: DXA Scan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f3f4f6;
-        }
-        .draggable {
-            cursor: grab;
-            transition: transform 0.1s ease;
-        }
-        .draggable:active {
-            cursor: grabbing;
-        }
-        .dropzone {
-            min-height: 3rem;
-            transition: all 0.2s ease;
-        }
-        .correct-bg {
-            background-color: #dcfce7 !important; /* tailwind green-100 */
-            border-color: #22c55e !important; /* tailwind green-500 */
-        }
-        .wrong-bg {
-            background-color: #fee2e2 !important; /* tailwind red-100 */
-            border-color: #ef4444 !important; /* tailwind red-500 */
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="text-gray-800 p-4 md:p-8">
+<body class="bg-slate-50 text-slate-800 font-sans p-6 md:p-12">
 
-    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="max-w-5xl mx-auto">
         <!-- Header -->
-        <div class="bg-blue-600 p-6 text-white text-center">
-            <h1 class="text-3xl font-bold mb-2">A-Level Biology Interactive Task</h1>
-            <p class="text-blue-100">GLP-1 Agonists, Metabolic Health, & Body Composition</p>
-        </div>
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-bold text-blue-900 mb-4">How DXA Works</h1>
+            <p class="text-lg text-slate-600">Dual-Energy X-ray Absorptiometry</p>
+            <p class="text-sm text-slate-500 mt-2">A visual guide for A-Level Biology</p>
+        </header>
 
-        <div class="p-6 md:p-8">
-            <!-- Reading Section -->
-            <section class="bg-blue-50 p-6 rounded-lg mb-8 border border-blue-100">
-                <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    Required Reading
-                </h2>
-                <div class="text-gray-700 space-y-3 leading-relaxed">
-                    <p>
-                        <strong>Incretin-based therapies</strong>, such as GLP-1 receptor agonists (e.g., semaglutide), are medications that mimic hormones naturally released by <strong>L-cells</strong> in the gut. Biologically, these hormones regulate energy balance by increasing satiety, slowing gastric emptying, and suppressing appetite in the brain.
-                    </p>
-                    <p>
-                        While highly effective for weight loss, popular health communicators (like the "Glucose Goddess" blog) have raised concerns about the loss of <strong>lean mass</strong> (muscle and water), which is vital for maintaining a healthy basal metabolic rate and physical strength as we age. 
-                    </p>
-                    <p>
-                        A 2026 systematic review and meta-analysis of 20 <strong>Randomised Controlled Trials (RCTs)</strong> involving over 15,000 participants provided formal clinical data on this. The study found that 25–39% of weight lost on incretin therapies is indeed lean mass. However, the analysis clarified that this proportional loss is broadly comparable to standard lifestyle interventions (26.2%). Most importantly, combining lifestyle changes with <strong>resistance training</strong> demonstrated the most favorable profile, dropping lean mass loss to just 17.5%. Accurate <strong>DXA scans</strong> or MRIs are frequently used in these studies to properly monitor the changing ratio of fat to functional muscle.
-                    </p>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <button onclick="openGlossary()" class="bg-blue-100 hover:bg-blue-200 text-blue-800 font-semibold py-2 px-6 border border-blue-300 rounded shadow-sm transition-colors inline-flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                        View Glossary of Terms
-                    </button>
-                </div>
-            </section>
-
-            <!-- Quiz Section -->
-            <section id="quiz-form">
-                <h2 class="text-2xl font-bold mb-6 border-b pb-2">Knowledge Check</h2>
+        <!-- Main Diagram Container -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-10">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                 
-                <!-- Multiple Choice Questions -->
-                <div class="space-y-6 mb-8">
-                    <!-- MCQ 1 -->
-                    <div class="mcq-container bg-gray-50 p-5 rounded-lg border border-gray-200" data-answer="B">
-                        <p class="font-semibold mb-3">1. What is the primary biological function of the hormones released by L-cells in the context of GLP-1 therapies?</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q1" value="A" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">To accelerate gastric emptying and digestion speed.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q1" value="B" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">To increase satiety and suppress appetite signaling in the brain.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q1" value="C" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">To directly stimulate the rapid growth of lean muscle tissue.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q1" value="D" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">To convert existing lean mass into adipose tissue.</span>
-                            </label>
-                        </div>
-                    </div>
+                <!-- SVG Diagram -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <svg viewBox="0 0 500 500" class="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Gradients -->
+                            <linearGradient id="highEnergy" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="#ef4444" stop-opacity="0.8" />
+                                <stop offset="100%" stop-color="#ef4444" stop-opacity="0.2" />
+                            </linearGradient>
+                            <linearGradient id="lowEnergy" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+                                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
 
-                    <!-- MCQ 2 -->
-                    <div class="mcq-container bg-gray-50 p-5 rounded-lg border border-gray-200" data-answer="C">
-                        <p class="font-semibold mb-3">2. According to the 2026 meta-analysis, how does the proportion of lean mass loss from GLP-1 medications compare to standard lifestyle interventions?</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q2" value="A" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">GLP-1 medications cause significantly more lean mass loss than lifestyle changes.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q2" value="B" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">Lifestyle interventions cause significantly more lean mass loss than medications.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q2" value="C" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">The proportion of lean mass loss is broadly comparable between the two.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q2" value="D" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">Neither intervention results in any measureable lean mass loss.</span>
-                            </label>
-                        </div>
-                    </div>
+                        <!-- Background Grid -->
+                        <g stroke="#f1f5f9" stroke-width="1">
+                            <line x1="0" y1="100" x2="500" y2="100" />
+                            <line x1="0" y1="200" x2="500" y2="200" />
+                            <line x1="0" y1="300" x2="500" y2="300" />
+                            <line x1="0" y1="400" x2="500" y2="400" />
+                        </g>
 
-                    <!-- MCQ 3 -->
-                    <div class="mcq-container bg-gray-50 p-5 rounded-lg border border-gray-200" data-answer="C">
-                        <p class="font-semibold mb-3">3. Which of the following demonstrated the most favorable profile for preserving lean mass during weight reduction?</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q3" value="A" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">Semaglutide therapy alone.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q3" value="B" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">Standard lifestyle intervention alone.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q3" value="C" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">Lifestyle intervention combined with resistance training.</span>
-                            </label>
-                            <label class="flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer">
-                                <input type="radio" name="q3" value="D" class="w-4 h-4 text-blue-600 form-radio focus:ring-blue-500">
-                                <span class="ml-3">Stopping all physical activity to preserve calories.</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                        <!-- X-Ray Source -->
+                        <rect x="150" y="420" width="100" height="40" rx="5" fill="#475569" />
+                        <text x="200" y="445" fill="white" font-size="14" font-weight="bold" text-anchor="middle">X-Ray Source</text>
 
-                <!-- Drag and Drop Section -->
-                <div class="mb-8">
-                    <p class="font-semibold text-lg mb-2">4. Terminology Matching</p>
-                    <p class="text-sm text-gray-500 mb-4 border-b pb-2">Drag and drop the terms into the correct definition boxes, or click a term and then click a box to place it.</p>
-                    
-                    <!-- Term Pool -->
-                    <div id="drag-pool" class="flex flex-wrap gap-3 mb-6 min-h-[3rem] p-4 bg-gray-100 rounded-lg border-2 border-dashed border-gray-300">
-                        <div draggable="true" data-id="l-cells" class="draggable bg-white border-2 border-blue-400 text-blue-700 font-bold py-2 px-4 rounded shadow-sm hover:shadow-md user-select-none">L-Cells</div>
-                        <div draggable="true" data-id="rct" class="draggable bg-white border-2 border-purple-400 text-purple-700 font-bold py-2 px-4 rounded shadow-sm hover:shadow-md user-select-none">RCT (Randomised Controlled Trial)</div>
-                        <div draggable="true" data-id="dxa" class="draggable bg-white border-2 border-pink-400 text-pink-700 font-bold py-2 px-4 rounded shadow-sm hover:shadow-md user-select-none">DXA Scan</div>
-                        <div draggable="true" data-id="lean-mass" class="draggable bg-white border-2 border-teal-400 text-teal-700 font-bold py-2 px-4 rounded shadow-sm hover:shadow-md user-select-none">Lean Mass</div>
-                    </div>
-
-                    <!-- Definitions / Drop Zones -->
-                    <div class="space-y-3">
-                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50 p-3 rounded border border-gray-200">
-                            <div class="flex-1 text-gray-700 pr-4 mb-2 md:mb-0">Gut cells responsible for releasing incretin hormones that regulate hunger.</div>
-                            <div class="dropzone w-full md:w-48 bg-white border-2 border-dashed border-gray-300 rounded flex items-center justify-center" data-match="l-cells"></div>
-                        </div>
+                        <!-- Beams -->
+                        <polygon points="180,420 220,420 280,80 120,80" fill="url(#highEnergy)" />
+                        <polygon points="190,420 210,420 250,80 150,80" fill="url(#lowEnergy)" />
                         
-                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50 p-3 rounded border border-gray-200">
-                            <div class="flex-1 text-gray-700 pr-4 mb-2 md:mb-0">Body tissue that includes functional muscle and water; crucial for a healthy basal metabolic rate.</div>
-                            <div class="dropzone w-full md:w-48 bg-white border-2 border-dashed border-gray-300 rounded flex items-center justify-center" data-match="lean-mass"></div>
-                        </div>
+                        <!-- Beam Labels -->
+                        <text x="70" y="380" fill="#ef4444" font-size="12" font-weight="bold">High Energy</text>
+                        <text x="270" y="380" fill="#3b82f6" font-size="12" font-weight="bold">Low Energy</text>
 
-                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50 p-3 rounded border border-gray-200">
-                            <div class="flex-1 text-gray-700 pr-4 mb-2 md:mb-0">An imaging tool used in studies to accurately distinguish between fat and muscle loss.</div>
-                            <div class="dropzone w-full md:w-48 bg-white border-2 border-dashed border-gray-300 rounded flex items-center justify-center" data-match="dxa"></div>
-                        </div>
+                        <!-- Patient Cross Section -->
+                        <g transform="translate(100, 220)">
+                            <!-- Table -->
+                            <rect x="0" y="60" width="200" height="10" fill="#cbd5e1" />
+                            
+                            <!-- Fat Layer -->
+                            <path d="M 20 60 Q 100 -20 180 60" fill="#fde047" opacity="0.9" />
+                            <text x="175" y="15" fill="#ca8a04" font-size="12" font-weight="bold">Fat</text>
+                            
+                            <!-- Muscle Layer -->
+                            <path d="M 40 60 Q 100 0 160 60" fill="#f87171" opacity="0.9" />
+                            <text x="145" y="35" fill="#991b1b" font-size="12" font-weight="bold">Muscle</text>
+                            
+                            <!-- Bone -->
+                            <circle cx="100" cy="45" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+                            <text x="100" y="49" fill="#475569" font-size="10" font-weight="bold" text-anchor="middle">Bone</text>
+                        </g>
 
-                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50 p-3 rounded border border-gray-200">
-                            <div class="flex-1 text-gray-700 pr-4 mb-2 md:mb-0">The "gold standard" experimental design used to evaluate the true efficacy of medical interventions.</div>
-                            <div class="dropzone w-full md:w-48 bg-white border-2 border-dashed border-gray-300 rounded flex items-center justify-center" data-match="rct"></div>
-                        </div>
-                    </div>
+                        <!-- Detector -->
+                        <rect x="120" y="40" width="160" height="40" rx="5" fill="#0f172a" />
+                        <text x="200" y="65" fill="white" font-size="14" font-weight="bold" text-anchor="middle">Detector Array</text>
+
+                        <!-- Data connection to computer -->
+                        <polyline points="280,60 380,60 380,200 420,200" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="5,5" />
+                        
+                        <!-- Computer -->
+                        <rect x="390" y="160" width="90" height="70" rx="4" fill="#334155" />
+                        <rect x="395" y="165" width="80" height="50" fill="#f8fafc" />
+                        <!-- Chart on computer screen -->
+                        <circle cx="435" cy="190" r="15" fill="#fde047" />
+                        <path d="M 435 190 L 435 175 A 15 15 0 0 1 450 190 Z" fill="#f87171" />
+                        <path d="M 435 190 L 450 190 A 15 15 0 0 1 435 205 Z" fill="#e2e8f0" />
+                        <rect x="425" y="230" width="20" height="30" fill="#334155" />
+                        <rect x="405" y="260" width="60" height="10" rx="2" fill="#334155" />
+                    </svg>
                 </div>
 
-                <!-- Controls and Score -->
-                <div class="flex flex-col md:flex-row items-center justify-between bg-gray-100 p-4 rounded-lg">
-                    <div class="flex gap-4 mb-4 md:mb-0">
-                        <button onclick="checkAnswers()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded shadow transition-colors">
-                            Check Answers
-                        </button>
-                        <button onclick="redoTask()" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded shadow transition-colors">
-                            Redo Task
-                        </button>
+                <!-- Explanation Text -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                        <h3 class="font-bold text-blue-900 text-lg flex items-center"><i class="fas fa-bolt text-yellow-500 mr-2"></i> 1. Dual Energy Beams</h3>
+                        <p class="text-sm mt-2">The machine sends two distinct X-ray beams through the body: one at a <strong>high energy</strong> level and one at a <strong>low energy</strong> level.</p>
                     </div>
-                    <div id="score-display" class="text-xl font-bold text-gray-800 hidden">
-                        Score: <span id="score-value">0</span> / 7
+
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                        <h3 class="font-bold text-green-900 text-lg flex items-center"><i class="fas fa-layer-group text-green-600 mr-2"></i> 2. Tissue Absorption (Attenuation)</h3>
+                        <p class="text-sm mt-2">As the beams pass through the patient, different tissues absorb (attenuate) the X-rays differently. Bone absorbs a lot of X-rays, while fat and muscle let more pass through.</p>
+                    </div>
+
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
+                        <h3 class="font-bold text-purple-900 text-lg flex items-center"><i class="fas fa-microchip text-purple-600 mr-2"></i> 3. Detection & Subtraction</h3>
+                        <p class="text-sm mt-2">The detector above measures how much of each beam makes it through. By using a mathematical algorithm to compare the high-energy vs. low-energy absorption, the computer "subtracts" the soft tissue to accurately calculate bone density, and differentiates fat from lean muscle mass.</p>
                     </div>
                 </div>
-
-            </section>
-        </div>
-    </div>
-
-    <!-- Glossary Modal -->
-    <div id="glossary-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] flex flex-col overflow-hidden">
-            <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
-                <h3 class="text-xl font-bold">Glossary of Terms</h3>
-                <button onclick="closeGlossary()" class="text-white hover:text-gray-200 transition-colors focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <div class="p-6 overflow-y-auto flex-1 text-gray-700 space-y-4 text-sm md:text-base">
-                <p><strong>Adipose Tissue (Fat Mass):</strong> Stored lipid tissue used by the body as an energy reserve.</p>
-                <p><strong>Basal Metabolic Rate (BMR):</strong> The minimum amount of energy the body requires at rest to maintain essential physiological functions; it is supported and increased by having a higher muscle mass.</p>
-                <p><strong>Dual-Energy X-ray Absorptiometry (DXA):</strong> A highly precise medical imaging scan used in clinical studies to accurately monitor body composition and distinguish between fat mass and lean mass.</p>
-                <p><strong>Gastric Emptying:</strong> The process by which food leaves the stomach and enters the small intestine; GLP-1 hormones act to slow this speed of digestion down.</p>
-                <p><strong>GLP-1 (Glucagon-Like Peptide-1):</strong> A peptide hormone produced primarily by the L-cells in the intestines in response to food intake. Its main functions are to stimulate insulin secretion, inhibit glucagon release, slow down gastric emptying, and promote a feeling of fullness (satiety).</p>
-                <p><strong>GLP-1 Receptor Agonists:</strong> A class of incretin-based medications (such as semaglutide and liraglutide) that mimic the body's natural GLP-1 gut hormones to regulate energy balance.</p>
-                <p><strong>Homeostatic Regulation:</strong> The physiological processes the body uses to maintain a stable internal environment, which includes the regulation of hunger and energy balance by gut hormones.</p>
-                <p><strong>Incretins:</strong> Hormones released by the gut (such as GLP-1) that play a major role in digestion, insulin secretion, and homeostatic hunger regulation.</p>
-                <p><strong>L-Cells (Large Granule Cells):</strong> Specialized enteroendocrine cells located in the gut that release hormones to help the body feel full, slow down digestion, and reduce appetite. The "L" stands for "Large," named by early histologists because these cells contain large, dense-core secretory granules (which store the hormones) when viewed under an electron microscope.</p>
-                <p><strong>Lean Mass:</strong> The body's total weight excluding fat, which primarily consists of water and functional muscle tissue.</p>
-                <p><strong>Magnetic Resonance Imaging (MRI):</strong> A medical imaging technique utilized in scientific studies as a highly accurate tool for monitoring specific changes in body composition.</p>
-                <p><strong>Meta-Analysis:</strong> A robust statistical technique that combines and analyzes data from multiple independent studies to reach a more definitive conclusion than a single study could provide.</p>
-                <p><strong>Random-Effects Models:</strong> A specific statistical method used in meta-analyses to pool data while accounting for the natural variability and differences between the various studies.</p>
-                <p><strong>Randomised Controlled Trials (RCTs):</strong> An experimental design considered the "gold standard" for evaluating medical interventions, where participants are randomly assigned to either a treatment group or a control group to prevent bias.</p>
-                <p><strong>Resistance Training:</strong> Physical exercise focused on building and maintaining muscle mass, which is shown to significantly preserve lean mass during periods of significant weight reduction.</p>
-                <p><strong>Satiety:</strong> The biological feeling of fullness and satisfaction after eating, which is increased by the signaling of incretin hormones.</p>
-            </div>
-            <div class="bg-gray-100 p-4 text-right border-t border-gray-200">
-                <button onclick="closeGlossary()" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded shadow transition-colors">
-                    Close
-                </button>
             </div>
         </div>
+
+        <!-- Key Biological Takeaways -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-yellow-400">
+                <h4 class="font-bold text-lg mb-2 text-center text-slate-700">Fat Mass</h4>
+                <p class="text-sm text-slate-600">DXA accurately maps stored lipid tissue. Because fat absorbs X-rays differently than muscle, the dual beams create a highly precise map of body fat percentage and distribution.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-red-400">
+                <h4 class="font-bold text-lg mb-2 text-center text-slate-700">Lean Mass</h4>
+                <p class="text-sm text-slate-600">The scan isolates functional muscle tissue and water. This is why DXA is the "gold standard" in studies measuring whether GLP-1 medications cause muscle loss alongside fat loss.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-slate-300">
+                <h4 class="font-bold text-lg mb-2 text-center text-slate-700">Bone Mineral Density</h4>
+                <p class="text-sm text-slate-600">Bones are dense with calcium and absorb the most X-ray radiation. DXA is most famous for diagnosing osteoporosis by calculating exactly how dense and strong the bones are.</p>
+            </div>
+        </div>
+
     </div>
 
-    <script>
-        // --- Glossary Modal Logic ---
-        function openGlossary() {
-            document.getElementById('glossary-modal').classList.remove('hidden');
-        }
-
-        function closeGlossary() {
-            document.getElementById('glossary-modal').classList.add('hidden');
-        }
-
-        // --- Drag and Drop / Click and Drop Logic ---
-        let draggedItem = null;
-        let selectedItem = null;
-
-        const draggables = document.querySelectorAll('.draggable');
-        const dropzones = document.querySelectorAll('.dropzone');
-        const pool = document.getElementById('drag-pool');
-
-        draggables.forEach(item => {
-            // Native Drag Events
-            item.addEventListener('dragstart', (e) => {
-                draggedItem = item;
-                e.dataTransfer.setData('text/plain', item.dataset.id);
-                setTimeout(() => item.classList.add('opacity-50'), 0);
-            });
-            
-            item.addEventListener('dragend', () => {
-                setTimeout(() => item.classList.remove('opacity-50'), 0);
-                draggedItem = null;
-            });
-
-            // Click-to-select functionality (for mobile accessibility)
-            item.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (selectedItem) {
-                    selectedItem.classList.remove('ring-4', 'ring-blue-500');
-                }
-                
-                // If clicking the same item, deselect it
-                if (selectedItem === item) {
-                    selectedItem = null;
-                } else {
-                    selectedItem = item;
-                    item.classList.add('ring-4', 'ring-blue-500');
-                }
-            });
-        });
-
-        dropzones.forEach(zone => {
-            // Native Drop Events
-            zone.addEventListener('dragover', (e) => e.preventDefault());
-            zone.addEventListener('dragenter', (e) => {
-                e.preventDefault();
-                zone.classList.add('bg-blue-100');
-            });
-            zone.addEventListener('dragleave', () => zone.classList.remove('bg-blue-100'));
-            
-            zone.addEventListener('drop', function(e) {
-                e.preventDefault();
-                this.classList.remove('bg-blue-100');
-                if (draggedItem) {
-                    if (this.children.length > 0) {
-                        pool.appendChild(this.children[0]);
-                    }
-                    this.appendChild(draggedItem);
-                }
-            });
-
-            // Click-to-drop functionality
-            zone.addEventListener('click', function() {
-                if (selectedItem) {
-                    // Move existing item back to pool if slot is occupied
-                    if (this.children.length > 0) {
-                        pool.appendChild(this.children[0]);
-                    }
-                    this.appendChild(selectedItem);
-                    selectedItem.classList.remove('ring-4', 'ring-blue-500');
-                    selectedItem = null;
-                } else if (this.children.length > 0) {
-                    // Click an occupied zone without selection to return item to pool
-                    pool.appendChild(this.children[0]);
-                }
-            });
-        });
-
-        // Allow dropping back into the pool
-        pool.addEventListener('dragover', (e) => e.preventDefault());
-        pool.addEventListener('drop', function(e) {
-            e.preventDefault();
-            if (draggedItem) {
-                this.appendChild(draggedItem);
-            }
-        });
-        pool.addEventListener('click', function() {
-            if (selectedItem) {
-                this.appendChild(selectedItem);
-                selectedItem.classList.remove('ring-4', 'ring-blue-500');
-                selectedItem = null;
-            }
-        });
-
-        // --- Grading Logic ---
-        function checkAnswers() {
-            let score = 0;
-
-            // 1. Check MCQs
-            const mcqContainers = document.querySelectorAll('.mcq-container');
-            mcqContainers.forEach(container => {
-                // Reset styling
-                container.classList.remove('correct-bg', 'wrong-bg');
-                
-                const correctAnswer = container.dataset.answer;
-                const radios = container.querySelectorAll('input[type="radio"]');
-                let answered = false;
-
-                radios.forEach(radio => {
-                    if (radio.checked) {
-                        answered = true;
-                        if (radio.value === correctAnswer) {
-                            score++;
-                            container.classList.add('correct-bg');
-                        } else {
-                            container.classList.add('wrong-bg');
-                        }
-                    }
-                });
-
-                if (!answered) {
-                    container.classList.add('wrong-bg'); // Mark wrong if unanswered
-                }
-            });
-
-            // 2. Check Drag and Drop matching
-            dropzones.forEach(zone => {
-                // Reset styling
-                zone.classList.remove('correct-bg', 'wrong-bg');
-                
-                const expectedMatch = zone.dataset.match;
-                if (zone.children.length > 0) {
-                    const actualMatch = zone.children[0].dataset.id;
-                    if (expectedMatch === actualMatch) {
-                        score++;
-                        zone.classList.add('correct-bg');
-                    } else {
-                        zone.classList.add('wrong-bg');
-                    }
-                } else {
-                    zone.classList.add('wrong-bg'); // Mark wrong if empty
-                }
-            });
-
-            // Display Score
-            const scoreDisplay = document.getElementById('score-display');
-            const scoreValue = document.getElementById('score-value');
-            scoreValue.textContent = score;
-            scoreDisplay.classList.remove('hidden');
-            
-            // Add a visual pop effect
-            scoreDisplay.classList.add('transform', 'scale-110', 'text-green-600');
-            setTimeout(() => {
-                scoreDisplay.classList.remove('transform', 'scale-110', 'text-green-600');
-            }, 300);
-        }
-
-        // --- Reset Logic ---
-        function redoTask() {
-            // Hide Score
-            document.getElementById('score-display').classList.add('hidden');
-
-            // Reset MCQs
-            const mcqContainers = document.querySelectorAll('.mcq-container');
-            mcqContainers.forEach(container => {
-                container.classList.remove('correct-bg', 'wrong-bg');
-                const radios = container.querySelectorAll('input[type="radio"]');
-                radios.forEach(radio => radio.checked = false);
-            });
-
-            // Reset Drag & Drop
-            dropzones.forEach(zone => {
-                zone.classList.remove('correct-bg', 'wrong-bg');
-                if (zone.children.length > 0) {
-                    pool.appendChild(zone.children[0]);
-                }
-            });
-
-            // Deselect any selected items
-            if(selectedItem) {
-                 selectedItem.classList.remove('ring-4', 'ring-blue-500');
-                 selectedItem = null;
-            }
-        }
-    </script>
 </body>
 </html>
